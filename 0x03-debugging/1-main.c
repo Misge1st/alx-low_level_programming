@@ -1,15 +1,15 @@
-#include "../main.h"
+#include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Description: check the code for ALX School students
- *
- * Return: Always 0 (Success)
-*/
+ * main - causes an infinite loop
+ * Return: 0
+ */
 
 int main(void)
 {
-	print_alphabet();
+	int i;
+
+	printf("Infinite loop avoided! \\0/\n");
+
 	return (0);
 }
