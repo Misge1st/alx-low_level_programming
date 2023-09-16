@@ -1,18 +1,23 @@
 #include "main.h"
+/*
+ * Task 6 in 0x04. C - More functions, more nested loops
+ * Purpose : print '_' n time followed by a new line.
+ */
+
 
 /**
- * print_line - Draws a straight line using the character _.
- * @n: The number of _ characters to be printed.
+ * print_line - print '_' n time followed by a new line.
+ * using _putchar function
+ * @n: int number
+ * Return: (void)
  */
+
 void print_line(int n)
 {
-	int len;
-
-	if (n > 0)
+	while (n > 0)
 	{
-		for (len = 0; len < n; len++)
-			_putchar('_');
+		_putchar('_');
+		n--;
 	}
-
 	_putchar('\n');
 }
