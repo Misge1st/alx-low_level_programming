@@ -1,21 +1,34 @@
-#include "holberton.h"
+/*
+ * File: 100-rot13.c
+ * Auth: Misgana Tsegaye
+ */
+
+#include "main.h"
 
 /**
- * print_number - Prints an integer.
- * @n: The integer to be printed.
+ * rot13 - Encodes a string using rot13.
+ * @s: The string to be encoded.
+ *
+ * Return: A pointer to the encoded string.
  */
-void print_number(int n)
+
+char *rot13(char *s)
 {
-	unsigned int num = n;
+int i, j;
+char *a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char *b = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (n < 0)
-	{
-		_putchar('-');
-		num = -num;
-	}
+for (i = 0; s[i]; i++)
+{
+for (j = 0; a[j]; j++)
+{
+if (s[i] == a[j])
+{
+s[i] = b[j];
+break;
+}
+}
+}
 
-	if ((num / 10) > 0)
-		print_number(num / 10);
-
-	_putchar((num % 10) + '0');
+return (s);
 }
