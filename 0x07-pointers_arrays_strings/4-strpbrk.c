@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * _strpbrk - counts the  occurence in memory
- *s: the array
- *accept: charcter that is searched
+ *@s: the array
+ *@accept: charcter that is searched
  *Return: the number of occurences
  */
 char *_strpbrk(char *s, char *accept)
