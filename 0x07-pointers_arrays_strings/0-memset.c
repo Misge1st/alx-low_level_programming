@@ -3,6 +3,8 @@
 /**
  * _memset - change the value of array address
  * @s: array
+ * @b: change into
+ * @n: up to index
  * Return: char*
  */
 
