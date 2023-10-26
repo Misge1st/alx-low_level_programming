@@ -1,50 +1,19 @@
 #include "main.h"
-/**
- * set_bit - Set the bit object
- * @n: long int
- * @index: index
- * Return: int
- */
 
+/**
+ * set_bit - Sets the value of a bit at a given index to 1.
+ * @n: A pointer to the bit.
+ * @index: The index to set the value at - indices start at 0.
+ *
+ * Return: If an error occurs - -1.
+ *         Otherwise - 1.
+ */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int temp, add, count = 0;
-	unsigned long int num = *n, ans;
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-	add = 2 << (index - 1);
-	ans = *n + add;
+	*n ^= (1 << index);
 
-	if (index == 0)
-	{
-		*n = (num % 2 == 0 ? *n + 1 : *n);
-		return (1);
-	}
-
-	temp = 2 << (index - 1);
-
-	if (temp > *n)
-	{
-		*n = temp + *n;
-		return (1);
-	}
-
-	while (num != 0)
-	{
-		if (num < (unsigned long int)(2 << count))
-		{
-			num -= 2 << (count - 1);
-			if (count == index)
-				return (1);
-			if (count < index)
-			{
-				*n = ans;
-				return (1);
-			}
-			count = 0;
-			continue;
-		}
-		count++;
-	}
-	*n = ans;
 	return (1);
 }
